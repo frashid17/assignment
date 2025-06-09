@@ -1,8 +1,22 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* General Styles */
 body {
     font-family: 'Segoe UI', sans-serif;
     background: #f9f9fb;
-    margin: 0;
-    padding: 0;
 }
 
 header {
@@ -12,17 +26,18 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
 }
 
-.logo {
-    font-size: 1.2rem;
-    font-weight: bold;
+.logo img {
+    height: 32px;
 }
 
 .user-section {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .upgrade {
@@ -39,6 +54,7 @@ header {
     justify-content: center;
     background: #f0f0fa;
     padding: 0.5rem 0;
+    flex-wrap: wrap;
 }
 
 .tab {
@@ -75,6 +91,7 @@ main {
 
 .slider-container input[type="range"] {
     width: 300px;
+    max-width: 100%;
 }
 
 .slider-value {
@@ -94,6 +111,7 @@ main {
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    margin-top: 2rem;
 }
 
 .top-up-content {
@@ -182,4 +200,59 @@ footer {
 footer a {
     color: #f0b429;
     text-decoration: none;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .user-section {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .top-up-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .left, .right {
+        flex: 1 1 100%;
+        text-align: left;
+    }
+
+    .buy-btn {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        font-size: 1.6rem;
+    }
+
+    .top-up-box {
+        padding: 1.5rem;
+    }
+
+    .logo img {
+        height: 28px;
+    }
 }
